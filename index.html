@@ -277,6 +277,122 @@ a{color:inherit;text-decoration:none} button{font:inherit}
   .hero h1 { font-size:clamp(38px,5.5vw,50px); }
 }
 
+
+
+/* MOBILE FINAL — ajustes isolados para telas pequenas; desktop preservado */
+@media screen and (max-width: 600px) {
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { width:100%; max-width:100%; overflow-x:clip; }
+  body { margin:0; }
+  img, svg, video { max-width:100%; }
+
+  /* Cabeçalho: três linhas equilibradas, sem elementos espremidos */
+  .site-header { position:relative !important; width:100%; }
+  .header-inner {
+    width:100% !important; max-width:100% !important;
+    display:grid !important; grid-template-columns:minmax(0,1fr) !important;
+    justify-items:stretch !important; align-items:center !important;
+    gap:9px !important; padding:11px 14px 12px !important;
+  }
+  .brand { min-width:0 !important; width:100%; gap:9px !important; }
+  .brand-mark { width:40px !important; height:40px !important; flex:0 0 40px !important; font-size:22px !important; }
+  .brand-name { font-size:19px !important; line-height:1.08 !important; white-space:nowrap !important; }
+  .brand-sub { margin-top:3px !important; font-size:8px !important; letter-spacing:.16em !important; white-space:nowrap !important; }
+  .nav {
+    order:initial !important; grid-column:1 !important; width:100% !important;
+    display:flex !important; justify-content:space-between !important; align-items:center !important;
+    flex-wrap:nowrap !important; gap:5px !important; padding:2px 0 !important;
+    font-size:clamp(11px,3.25vw,13px) !important; line-height:1.25 !important;
+  }
+  .nav a { white-space:nowrap !important; padding:3px 0 !important; }
+  .header-inner > .btn {
+    justify-self:start !important; width:max-content !important; max-width:100% !important;
+    min-height:38px !important; padding:10px 15px !important;
+    font-size:12px !important; line-height:1.15 !important; white-space:nowrap !important;
+  }
+
+  /* Hero: conteúdo legível e imagem sem estourar a largura */
+  .hero { width:100%; background-position:60% center !important; background-size:cover !important; }
+  .hero-inner {
+    width:100% !important; max-width:100% !important;
+    min-height:clamp(430px,118vw,490px) !important;
+    padding:24px 14px !important; display:flex !important;
+    align-items:center !important; justify-content:center !important;
+  }
+  .hero-inner > div:first-child {
+    width:100% !important; max-width:100% !important; min-width:0 !important;
+    padding:17px 15px !important; border-radius:17px !important;
+    background:rgba(255,249,244,.86) !important;
+    backdrop-filter:blur(2px);
+  }
+  .hero .eyebrow { font-size:9px !important; line-height:1.4 !important; letter-spacing:.16em !important; }
+  .hero h1 {
+    max-width:100% !important; margin:11px 0 13px !important;
+    font-size:clamp(30px,8.2vw,35px) !important; line-height:1.08 !important;
+    overflow-wrap:normal !important;
+  }
+  .hero p { max-width:100% !important; margin:0 0 17px !important; font-size:15px !important; line-height:1.45 !important; }
+  .hero .btn { display:inline-flex !important; align-items:center; justify-content:center; max-width:100% !important; padding:12px 14px !important; font-size:13px !important; line-height:1.25 !important; white-space:normal !important; }
+
+  /* Quem somos: tipografia e etiquetas pequenas, sem itálico */
+  #quem-somos.about-approved { width:100% !important; max-width:100% !important; padding:43px 17px 45px !important; }
+  #quem-somos .about-approved-inner { width:100% !important; max-width:100% !important; }
+  #quem-somos .about-approved-inner > .eyebrow { font-size:9px !important; line-height:1.5 !important; letter-spacing:1.6px !important; }
+  #quem-somos .about-approved-inner > h2 { margin:7px 0 8px !important; font-size:31px !important; line-height:1.15 !important; font-style:normal !important; }
+  #quem-somos .about-heart-divider { margin:8px auto 17px !important; }
+  #quem-somos .about-approved-text { width:100% !important; max-width:35em !important; margin:0 auto !important; font-size:14px !important; line-height:1.58 !important; }
+  #quem-somos .about-approved-values {
+    display:flex !important; flex-direction:column !important; align-items:center !important;
+    justify-content:center !important; gap:8px !important; width:100% !important;
+    margin:20px auto 0 !important;
+  }
+  #quem-somos .about-value {
+    display:inline-flex !important; flex-direction:row !important; align-items:center !important;
+    justify-content:center !important; gap:7px !important; width:auto !important;
+    max-width:100% !important; min-height:32px !important; padding:7px 12px !important;
+    border-radius:999px !important; font:normal 12px/1.2 Arial,Helvetica,sans-serif !important;
+    font-style:normal !important; text-align:center !important; white-space:normal !important;
+  }
+  #quem-somos .about-icon, #quem-somos .about-icon svg {
+    display:block !important; width:18px !important; height:18px !important;
+    flex:0 0 18px !important; overflow:visible !important;
+  }
+
+  /* Catálogos: capas inteiras, sem cortar títulos e imagens */
+  .catalogs { width:100%; }
+  .catalogs .section { width:100%; max-width:100%; padding:40px 15px !important; }
+  .section-heading { width:100%; margin:0 auto 22px !important; }
+  .section-heading .eyebrow { font-size:9px !important; letter-spacing:.15em !important; line-height:1.5 !important; }
+  .section-heading h2 { margin:7px 0 9px !important; font-size:29px !important; line-height:1.15 !important; }
+  .section-heading p { max-width:34em; margin:0 auto !important; font-size:14px !important; line-height:1.5 !important; }
+  .catalog-grid { display:grid !important; grid-template-columns:minmax(0,1fr) !important; gap:15px !important; width:100% !important; max-width:460px !important; margin:0 auto !important; }
+  .catalog-card {
+    display:grid !important; grid-template-columns:minmax(0,1fr) !important;
+    width:100% !important; min-width:0 !important; min-height:0 !important;
+    overflow:hidden !important; border-radius:16px !important;
+  }
+  .catalog-card img {
+    display:block !important; width:100% !important; height:300px !important;
+    min-height:0 !important; max-height:300px !important; object-fit:contain !important;
+    object-position:center center !important; background:#fbf1eb !important;
+  }
+  .card-copy { width:100% !important; min-width:0 !important; padding:17px 16px 19px !important; }
+  .card-copy h3 { font-size:25px !important; line-height:1.2 !important; margin:0 0 8px !important; }
+  .card-copy p { font-size:14px !important; line-height:1.5 !important; margin:0 0 15px !important; }
+  .card-copy .btn { align-self:flex-start; padding:11px 16px !important; font-size:13px !important; }
+  .catalog-tabs { display:flex !important; flex-wrap:wrap !important; justify-content:center !important; gap:7px !important; }
+  .catalog-tab { max-width:100%; font-size:11px !important; padding:8px 11px !important; }
+
+  /* Contato e rodapé sem colunas estreitas */
+  .contact-grid { display:grid !important; grid-template-columns:minmax(0,1fr) !important; gap:14px !important; }
+  .contact, footer { width:100%; }
+  .float-wa { display:none !important; }
+}
+
+@media screen and (min-width: 601px) {
+  /* Nenhuma regra mobile aplicada ao desktop/tablet largo */
+}
+
 </style></head><body>
 <header class="site-header"><div class="header-inner">
 <a class="brand" href="#inicio" data-view="home"><span class="brand-mark">tp</span><span><div class="brand-name">Thayara Polizel</div><div class="brand-sub">Confeitaria Artesanal</div></span></a>
